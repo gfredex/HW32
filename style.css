@@ -3,3 +3,52 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+.task-first {
+    width: fit-content;
+    background-color: #fff;
+    color: #000;
+    font-size: 18px;
+    margin: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 1px solid #000;
+}
+
+.task-first.dark {
+    background-color: #000;
+    color: #fff;
+}
+
+.task-first.light {
+    background-color: #fff;
+    color: #000;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.font-size>p {
+    margin-bottom: 10px;
+}
+
+.font-size>button {
+    margin-right: 40px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: inherit;
+}
+
+select,
+label,
+p,
+span {
+    font-size: inherit;
+}
