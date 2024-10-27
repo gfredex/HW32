@@ -60,3 +60,36 @@ btnDownFont.addEventListener('click', () => {
     fontSize.textContent = newFontSize;
     sessionStorage.setItem('fontSize', newFontSize);
 });
+
+const userForm = document.getElementById('user-form');
+const userName = document.getElementById('user-name');
+const userPass = document.getElementById('user-pass');
+userForm.addEventListener('click', (e) => {
+    e.preventDefault();
+    const userData = {
+        user: userName.value,
+        password: userPass.value
+    }
+    if (e.target.id == 'btn-reg') {
+        //  localStorage.setItem('user', )  
+        if (userName.value.length > 0 && userPass.value.length > 0) {
+            // console.log(JSON.stringify(userData));
+            userName.style.borderColor = 'green';
+            userPass.style.borderColor = 'green';
+            localStorage.setItem('myUser', JSON.stringify(userData))
+        } else {
+            alert('Данные не заполнены!')
+            userName.style.borderColor = 'red';
+            userPass.style.borderColor = 'red';
+        }
+    }
+
+    // console.log();
+
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const userData = JSON.parse(localStorage.getItem('myUser'));
+    userName.value = userData.user;
+    userPass.value = userData.password;
+});
